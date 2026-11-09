@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>イラスト | にゃんたの研究室</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="index.html">HOME</a>
+        <a href="profile.html">PROFILE</a>
+        <a href="illustrations.html" class="active">ILLUSTRATIONS</a>
+        <a href="works.html">WEB WORKS</a>
+    </nav>
+
+    <main class="gallery-content">
+        <h1>ILLUSTRATIONS</h1>
+<div class="gallery-grid">
+    <img src="gallery-01.png" alt="作品1" onclick="openLightbox(this.src)">
+    <img src="gallery-02.png" alt="作品2" onclick="openLightbox(this.src)">
+    <img src="gallery-03.png" alt="作品3" onclick="openLightbox(this.src)">
+</div>
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-button">&times;</span>
+    <img id="lightbox-image" class="lightbox-image" src="" alt="拡大表示" onclick="event.stopPropagation()">
+</div>
+    </main>
+
+<script>
+    function openLightbox(imageSrc) {
+        document.getElementById("lightbox").style.display = "flex";
+        document.getElementById("lightbox-image").src = imageSrc;
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+    
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeLightbox();
+    }
+});
+
+</script>
+
+<footer class="site-footer">
+    <p>にゃんたの研究室</p>
+    <small>© 2026 きおう ろん</small>
+</footer>
+
+</body>
+</html>
